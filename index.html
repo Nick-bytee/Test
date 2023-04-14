@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        p {
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            border-radius: 10px;
+            background-color: black;
+            color: red;
+            padding: 10px;
+            width: 40%;
+            margin: Auto;
+            text-align: center;
+
+        }
+
+        form {
+            font-family: 'Courier New', Courier, monospace;
+            border-radius: 10px;
+            background-color: gray;
+            padding: 15px;
+            width: 40%;
+            margin: auto;
+
+        }
+
+        input,
+        div,
+        select {
+
+            margin-bottom: 10px;
+            width: 100%
+        }
+
+        input {
+            border-radius: 6px;
+            height: 20px;
+        }
+
+        div {
+            align-items: center;
+            display: flex;
+        }
+
+        select {
+            height: 24px;
+        }
+
+        body {
+            background-image: url('https://www.designbolts.com/wp-content/uploads/2012/11/Free-medium-dark-Tileable-Pattern-Website-Background.jpg');
+        }
+    </style>
+</head>
+
+<body>
+    <p>Book Slot Now</p>
+    <form>
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" name="name" required><br>
+      
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email" required><br>
+      
+        <label for="phone">Phone:</label><br>
+        <input type="tel" id="phone" name="phone" required><br>
+      
+        <label for="time">Time for Call:</label><br>
+        <div>
+          <input type="date" id="date" name="date" >
+          <select name="time" id="time" required>
+            <option value="08:00">8:00 AM</option>
+            <option value="09:00">9:00 AM</option>
+            <option value="10:00">10:00 AM</option>
+            <option value="11:00">11:00 AM</option>
+            <option value="12:00">12:00 PM</option>
+            <option value="13:00">1:00 PM</option>
+            <option value="14:00">2:00 PM</option>
+            <option value="15:00">3:00 PM</option>
+            <option value="16:00">4:00 PM</option>
+            <option value="17:00">5:00 PM</option>
+            <option value="18:00">6:00 PM</option>
+            <option value="19:00">7:00 PM</option>
+            <option value="20:00">8:00 PM</option>
+            <option value="21:00">9:00 PM</option>
+            <option value="22:00">10:00 PM</option>
+          </select>
+        </div>
+
+        <ul class 'items'>
+            <li class="item" id = '1'>HELLO</li>
+            <li class ="item" id = '2'>HELLO AGAIN</li>
+      
+        <input class = 'button' type='submit' style="
+          background-color: black;
+          color: red;
+          height: 38px;"
+        >
+      </form>
+      
+    <script>
+        const form = document.querySelector('form');
+        form.addEventListener('submit', printDetails);
+        function printDetails(event) {
+          // Prevent the form from submitting and reloading the page
+          const name = document.querySelector('input[name="name"]').value;
+          const email = document.querySelector('input[name="email"]').value;
+          const phone = document.querySelector('input[name="phone"]').value;
+          const date = document.querySelector('input[type="date"]').value;
+          const time = document.querySelector('select[name="time"]').value;
+          console.log(`Name: ${name}\nEmail: ${email}\nPhone: ${phone}\nDate: ${date}\nTime: ${time}`);
+        }
+
+        
+        const first = document.getElementById('1');
+        const second = document.getElementById('2');
+
+        first.style.color = 'green'
+        second.style.color = 'yellow'
+
+        const button = document.querySelector('input[type="submit"]')
+
+        //event on click
+        button.addEventListener('click', function(e){
+            e.preventDefault();
+            printDetails();
+            console.log('Button Clicked')
+        })
+
+        //event on mouseover
+        button.addEventListener('mouseover', (a) => {
+            button.style.backgroundColor = 'red'
+        })
+
+        button.addEventListener('mouseout', function(aa){
+            button.style.backgroundColor = 'black'
+        })
+
+
+        </script>
+</body>
+
+</html>
